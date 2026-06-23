@@ -1,0 +1,22 @@
+{
+  "name": "wayfare-ai-travel-planner",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n WEB,API -c cyan,magenta \"npm run dev -w @wayfare/web\" \"npm run dev -w @wayfare/api\"",
+    "build": "npm run build -w @wayfare/api && npm run build -w @wayfare/web",
+    "test": "npm run test -w @wayfare/api",
+    "lint": "npm run lint -w @wayfare/api && npm run lint -w @wayfare/web",
+    "typecheck": "npm run typecheck -w @wayfare/api && npm run typecheck -w @wayfare/web",
+    "start": "concurrently -n WEB,API -c cyan,magenta \"npm run start -w @wayfare/web\" \"npm run start -w @wayfare/api\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
