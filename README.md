@@ -208,7 +208,7 @@ Environment variables are read only on the server. The OpenAI key, database URI,
 - Flight, map, opening-hours, weather, and booking providers are not connected.
 - The local development store is intentionally ephemeral when no MongoDB URI is present.
 - Currency defaults to USD.
-- The repository cannot include a real deployment URL or walkthrough video until the owner deploys and records them.
+- A walkthrough video is not included; a ready-to-record script is provided in `docs/WALKTHROUGH_SCRIPT.md`.
 
 ## Walkthrough video outline
 
