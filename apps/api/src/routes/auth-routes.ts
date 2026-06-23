@@ -20,6 +20,15 @@ export const authRoutes = (store: Store) => {
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     limit: 30,
+    keyGenerator: (req) => {
+      const netlifyIp = req.headers["x-nf-client-connection-ip"];
+      return (
+        (Array.isArray(netlifyIp) ? netlifyIp[0] : netlifyIp) ||
+        req.ip ||
+        req.socket.remoteAddress ||
+        "unknown-client"
+      );
+    },
     standardHeaders: "draft-8",
     legacyHeaders: false,
     message: { error: { code: "RATE_LIMITED", message: "Too many attempts. Try again shortly." } }
@@ -72,4 +81,3 @@ export const authRoutes = (store: Store) => {
 
   return router;
 };
-
