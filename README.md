@@ -204,12 +204,9 @@ Environment variables are read only on the server. The OpenAI key, database URI,
 
 ## Known limitations
 
-- Hotel ratings and costs are planning estimates, not live inventory.
 - Flight, map, opening-hours, weather, and booking providers are not connected.
 - The local development store is intentionally ephemeral when no MongoDB URI is present.
 - Currency defaults to USD.
-- A walkthrough video is not included; a ready-to-record script is provided in `docs/WALKTHROUGH_SCRIPT.md`.
 
-## Walkthrough video outline
 
-A ready-to-record script is available in [`docs/WALKTHROUGH_SCRIPT.md`](docs/WALKTHROUGH_SCRIPT.md).
+
