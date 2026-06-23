@@ -6,10 +6,9 @@ The product is deliberately designed as a calm, editorial travel experience rath
 
 ## Live application
 
-- Application: deployment URL is added here during production release
-- API health check: deployment URL is added here during production release
-- Walkthrough video: add the 3–4 minute video URL after recording
-- Repository: this repository
+- Application: [wayfare-ai-travel-planner.vercel.app](https://wayfare-ai-travel-planner.vercel.app)
+- API health check: [wayfare-api.netlify.app/health](https://wayfare-api.netlify.app/health)
+- Repository: [github.com/Priyanshu61900/wayfare-ai-travel-planner](https://github.com/Priyanshu61900/wayfare-ai-travel-planner)
 
 ## Chosen stack
 
