@@ -4,12 +4,12 @@ Wayfare is a multi-user travel planning application that turns a destination, tr
 
 The product is deliberately designed as a calm, editorial travel experience rather than a generic AI form.
 
-## Live submission links
+## Live application
 
-- Application: add the deployed web URL after deployment
-- API health check: add the deployed API `/health` URL after deployment
+- Application: deployment URL is added here during production release
+- API health check: deployment URL is added here during production release
 - Walkthrough video: add the 3–4 minute video URL after recording
-- Repository: add the public GitHub repository URL after pushing
+- Repository: this repository
 
 ## Chosen stack
 
@@ -180,15 +180,15 @@ docker compose up --build
 
 This starts MongoDB, the Express API, and the Next.js web application.
 
-### Option B: Render + Vercel
+### Option B: Vercel + Netlify Functions
 
 1. Push the repository to GitHub.
 2. Create a MongoDB Atlas database.
-3. Deploy the API using `render.yaml`.
-4. Set `MONGODB_URI`, `OPENAI_API_KEY`, `JWT_SECRET`, and `WEB_ORIGIN` in Render.
-5. Deploy `apps/web` to Vercel.
-6. Set `API_URL` in the Vercel project to the Render API origin.
-7. Set `WEB_ORIGIN` in Render to the final Vercel URL.
+3. Import the repository into Netlify using the root `netlify.toml`.
+4. Set `MONGODB_URI`, `JWT_SECRET`, `WEB_ORIGIN`, and optionally `OPENAI_API_KEY` in Netlify.
+5. Import the repository into Vercel with `apps/web` as the root directory.
+6. Set `API_URL` in Vercel to the Netlify site origin.
+7. Set `WEB_ORIGIN` in Netlify to the final Vercel URL.
 8. Verify `/health`, registration, generation, edits, and logout in production.
 
 Environment variables are read only on the server. The OpenAI key, database URI, and JWT secret are never included in the browser bundle.
@@ -214,4 +214,3 @@ Environment variables are read only on the server. The OpenAI key, database URI,
 ## Walkthrough video outline
 
 A ready-to-record script is available in [`docs/WALKTHROUGH_SCRIPT.md`](docs/WALKTHROUGH_SCRIPT.md).
-
